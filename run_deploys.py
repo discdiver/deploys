@@ -15,7 +15,7 @@ def fetch_temps(lat: float = 38.9, lon: float = -77.0):
 
 
 if __name__ == "__main__":
-    fetch_temps.from_source(source="", entrypoint="run_deploys.py").deploy(
+    fetch_temps.from_source(source="", entrypoint="run_deploys.py:fetch_temps").deploy(
         name="fetch-data",
         work_pool_name="managed1",
     )
