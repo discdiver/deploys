@@ -9,13 +9,17 @@ def fetch_temps(lat: float = 38.9, lon: float = -77.0):
         "https://api.open-meteo.com/v1/forecast/",
         params=dict(latitude=lat, longitude=lon, hourly="temperature_2m"),
     )
-    most_recent_temp = float(weather.json()["hourly"]["temperature_2m"][:3])
-    print(f"Most recent temp C: {most_recent_temp.sum()} degrees")
+    forecasted_temps = float(weather.json()["hourly"]["temperature_2m"][:12])
+    print(f"Max expected value in the next 12 hours: {max(forecasted_temps)} degrees C")
     return
 
 
+# create deployment from code in GitHub repo
 if __name__ == "__main__":
-    fetch_temps.from_source(source="", entrypoint="run_deploys.py:fetch_temps").deploy(
+    flow.from_source(
+        source="https://github.com/discdiver/deploys.git",
+        entrypoint="run_deploys.py:fetch_temps",
+    ).deploy(
         name="fetch-data",
         work_pool_name="managed1",
     )
