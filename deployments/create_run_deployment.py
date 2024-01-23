@@ -5,6 +5,6 @@ if __name__ == "__main__":
         source="https://github.com/discdiver/deploys.git",
         entrypoint="flow-code/fetch_data_run_deployment.py:fetch_temps",
     ).deploy(
-        name="fetch-data-run-deployment",
+        name="run-deploy-example",
         work_pool_name="managed1",
     )

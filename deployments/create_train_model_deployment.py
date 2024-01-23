@@ -5,6 +5,6 @@ if __name__ == "__main__":
         source="https://github.com/discdiver/deploys.git",
         entrypoint="flow-code/train_model.py:train_model",
     ).deploy(
-        name="train_model",
+        name="train-model",
         work_pool_name="managed2",
     )
