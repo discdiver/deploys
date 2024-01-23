@@ -18,7 +18,7 @@ def fetch_temps(lat: float = 38.9, lon: float = -77.0):
 if __name__ == "__main__":
     flow.from_source(
         source="https://github.com/discdiver/deploys.git",
-        entrypoint="run_deploys.py:fetch_temps",
+        entrypoint="fetch_data.py:fetch_temps",
     ).deploy(
         name="fetch-data",
         work_pool_name="managed1",
