@@ -13,6 +13,6 @@ def fetch_temps(lat: float = 38.9, lon: float = -77.0):
     print(f"Expected temps for the next 12 hours: {forecasted_temps} degrees C")
 
     run_deployment(
-        name="fetch-temps/train-model",
-        parameters={"forecasted_temps": "forecasted_temps"},
+        name="train-model/train-model",
+        parameters={"forecasted_temps": forecasted_temps},
     )
