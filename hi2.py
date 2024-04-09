@@ -9,5 +9,5 @@ def hi():
 if __name__ == "__main__":
     flow.from_source(
         source="https://github.com/discdiver/deploys.git",
-        entrypoint="flow-code/hi2.py:hi flow",
+        entrypoint="hi2.py:hi flow",
     ).deploy(name="hi deploy", work_pool_name="m1")
