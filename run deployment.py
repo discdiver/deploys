@@ -8,7 +8,7 @@ def hi1():
     print("hi1")
 
     run_deployment(
-        name="second flow/hi deploy",
+        name="hi flow/hi deploy",
     )
 
 
